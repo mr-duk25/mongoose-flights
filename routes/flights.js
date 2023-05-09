@@ -5,12 +5,13 @@ const flightsCtrl = require('../controllers/flights');
 
 // GET /flights
 router.get('/', flightsCtrl.index);
-// GET /movies/new
+// GET /flights/new
 router.get('/new', flightsCtrl.new);
-// GET	/posts/:id 'show'(details)
+// GET	/flights/:id 'show'(details)
 router.get('/:id', flightsCtrl.show);
+// GET	/flights/:id/destinations
 
-// POST	/posts  'create'
+// POST	/flights  'create'
 router.post('/', flightsCtrl.create);
 
 module.exports = router;

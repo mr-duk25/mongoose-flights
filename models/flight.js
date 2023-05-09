@@ -20,7 +20,7 @@ var flightSchema = new Schema ({
     }, 
     airline: {
         type: String,
-        enum: ['Spirit', 'United', 'American Airlines', 'Jetblu', 'Delta']
+        enum: ['Spirit', 'United', 'American Airlines', 'Jetblue', 'Delta']
     },
     flightNo: {
         type: Number,

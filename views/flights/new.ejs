@@ -16,19 +16,16 @@
             <option value="Spirit">Spirit</option>
             <option value="American Airlines">American Airlines</option>
             <option value="United">United</option>
-            <option value="Jetblu">Jetblu</option>
+            <option value="Jetblue">Jetblue</option>
             <option value="Delta">Delta</option>
         </select>
     </label><br>
-    <label>Flight
-        <input type="text" name="flightnum">
+    <label>Flight No:
+        <input type="number" name="flightNo">
     </label><br>
             
   <label>Departs:
     <input type="datetime-local"> 
-  </label><br>
-  <label>Destinations:
-  </label><br>
   <button type="submit">Add Flight</button>
 </form>
 <p><%= errorMsg %></p>
