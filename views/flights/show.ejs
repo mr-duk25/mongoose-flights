@@ -17,26 +17,30 @@
 <!-- new markup below -->
 <br><br><h2>Destinations</h2>
 <form id="add-destination" method="POST"
-  action="/flights/<%= flight._id %>/destination">
-  <label>Airport:
-    <select name="airport">
-        <option value="LAX">LAX</option>
-        <option value="AUS">AUS</option>
-        <option value="DFW">DFW</option>
-        <option value="DEN">DEN</option>
-        <option value="SAN">SAN</option>
-    </select>
-    </label>
-  <label>Arrival:
-  <input type="datetime-local"> 
+action="/flights/<%= flight._id %>/destination">
+<label>Airport:
+  <select name="airport">
+    <option value="LAX">LAX</option>
+    <option value="AUS">AUS</option>
+    <option value="DFW">DFW</option>
+    <option value="DEN">DEN</option>
+    <option value="SAN">SAN</option>
+  </select>
 </label>
-<label>Airline:
-    <select name="airline">
-        <option value="Spirit">Spirit</option>
-        <option value="American Airlines">American Airlines</option>
-        <option value="United">United</option>
-        <option value="Jetblue">Jetblue</option>
-        <option value="Delta">Delta</option>
-    </select>
+<label>Arrival:
+  <input type="datetime-local" name="arrival"> 
+</label>
   <input type="submit" value="Add Destination">
 </form>
+
+
+<br>
+<tr id="show-page">
+  <% flight.destinations.forEach(function(f) { %>
+    <strong><td>Airport: </td></strong> 
+    <td><%= f.airport %></td>
+    <strong><td>Arrival: </td></strong>
+    <td><%= f.arrival %></td>
+    <% }) %>
+   <button><a href="/tickets">Buy Ticket</a></button>
+</tr>

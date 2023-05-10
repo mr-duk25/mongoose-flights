@@ -10,6 +10,7 @@ router.get('/new', flightsCtrl.new);
 // GET	/flights/:id 'show'(details)
 router.get('/:id', flightsCtrl.show);
 // GET	/flights/:id/destinations
+router.post('/:id/destination', flightsCtrl.createDestination);
 
 // POST	/flights  'create'
 router.post('/', flightsCtrl.create);

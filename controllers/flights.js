@@ -5,7 +5,8 @@ module.exports = {
   new: addFlight,
   create,
   show,
-  delete: deleteOne
+  delete: deleteOne,
+  createDestination
 };
 
 async function deleteOne(req, res) {
@@ -20,8 +21,6 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
-  // req.body.airport = req.body.airport.trim();
-  // req.body.airline = req.body.airline.trim();
   console.log('req.body', req.body);
   try {
     await Flight.create(req.body);
@@ -31,6 +30,20 @@ async function create(req, res) {
   } catch (err) {
     console.log(err);
     res.render('flights/new', {title: 'Add Flight', errorMsg: err.message});
+  }
+}
+async function createDestination(req, res) {
+  console.log('req.body', req.body);
+  try {
+    const flight = await Flight.findById(req.params.id);
+    flight.destinations.push(req.body);
+    await flight.save();
+    // always redirect after CUDing data
+    // refactor to redirect after we implement it
+    res.redirect(`/flights/${req.params.id}`);
+  } catch (err) {
+    console.log(err);
+    res.redirect(`/flights/${req.params.id}`);
   }
 }
 
