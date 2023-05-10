@@ -4,8 +4,14 @@ module.exports = {
   index,
   new: addFlight,
   create,
-  show
+  show,
+  delete: deleteOne
 };
+
+async function deleteOne(req, res) {
+  await Flight.deleteOne({_id: req.params.id})
+  res.redirect('/flights')
+}
 
 async function show(req, res) {
   const flight = await Flight.findById(req.params.id);
