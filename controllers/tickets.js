@@ -6,7 +6,7 @@ module.exports = {
 
 
 function index(req, res) {
-    res.render('flights/ticketsview', {
+    res.render('tickets/new', {
     //   tickets: Ticket.getAll()
     });
   }
