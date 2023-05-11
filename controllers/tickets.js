@@ -1,12 +1,11 @@
 const Ticket = require('../models/ticket')
 
 module.exports = {
-    index
+    new: newTicket,
 };
 
 
-function index(req, res) {
-    res.render('tickets/new', {
-    //   tickets: Ticket.getAll()
-    });
+
+function newTicket(req, res) {
+    res.render('tickets/new');
   }

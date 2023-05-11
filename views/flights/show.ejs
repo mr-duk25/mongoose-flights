@@ -44,3 +44,12 @@ action="/flights/<%= flight._id %>/destination">
     <% }) %>
    <button><a href="/tickets">Buy Ticket</a></button>
 </tr>
+
+<tr id="tickets">
+  <% tickets.forEach(function(t) { %>
+    <strong><td>Seats </td></strong> 
+    <td><%= t.seat %></td>
+    <strong><td>Price </td></strong>
+    <td><%= t.price %></td>
+    <% }) %>
+</tr>

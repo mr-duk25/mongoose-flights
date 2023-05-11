@@ -3,9 +3,7 @@ var router = express.Router();
 var ticketsCtrl = require('../controllers/tickets');
 
 
-// GET request to /flights
-router.get('/', ticketsCtrl.index);
 
-
+router.get('/', ticketsCtrl.new);
 
 module.exports = router;
