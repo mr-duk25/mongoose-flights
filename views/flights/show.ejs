@@ -11,7 +11,21 @@
     <div><%= flight.flightNo %></div>
     <div>Departs: </div>
     <div><%= flight.departs %></div>
+  <a href="/flights/<%= flight._id %>/tickets/new">
+    <button>Add Ticket</button>
+  </a>
+  
   </section>
+  <tr id="show-page">
+    <% tickets.forEach(function(t) { %>
+      <strong><td>Seats </td></strong> 
+      <td><%= t.seat %></td>
+      <strong><td>Price </td></strong>
+      <td><%= t.price %></td>
+      <% }) %>
+  </tr>
+
+  
   
 </section>
 <!-- new markup below -->
@@ -37,19 +51,10 @@ action="/flights/<%= flight._id %>/destination">
 <br>
 <tr id="show-page">
   <% flight.destinations.forEach(function(f) { %>
+    <br>
     <strong><td>Airport: </td></strong> 
     <td><%= f.airport %></td>
     <strong><td>Arrival: </td></strong>
     <td><%= f.arrival %></td>
-    <% }) %>
-   <button><a href="/tickets">Buy Ticket</a></button>
-</tr>
-
-<tr id="tickets">
-  <% tickets.forEach(function(t) { %>
-    <strong><td>Seats </td></strong> 
-    <td><%= t.seat %></td>
-    <strong><td>Price </td></strong>
-    <td><%= t.price %></td>
     <% }) %>
 </tr>
